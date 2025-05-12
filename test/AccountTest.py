@@ -7,10 +7,10 @@ from okx import Account
 
 class AccountTest(unittest.TestCase):
     def setUp(self):
-        api_key = 'your_apiKey'
-        api_secret_key = 'your_secretKey'
-        passphrase = 'your_secretKey'
-        self.AccountAPI = Account.AccountAPI(api_key, api_secret_key, passphrase, flag='1')
+        apiKey = "a0e09b8d-defd-4162-86c1-d814f8ec8b53",
+        secretKey = "537374F30510C3F957D4A13AB229E2D5",
+        passphrase = "milkyllx7353454A!",
+        self.AccountAPI = Account.AccountAPI(apiKey, secretKey, passphrase, flag='1')
 
     # '''
     # POSITIONS_HISTORY = '/api/v5/account/positions-history' #need add
@@ -21,11 +21,11 @@ class AccountTest(unittest.TestCase):
     #
     # def test_get_pm_limit(self):
     #     print(self.AccountAPI.get_pm_limit("SWAP","BTC-USDT"))
-    # positions-history
+    # # positions-history
     # def test_get_positions_history(self):
     #     print(self.AccountAPI.get_positions_history())
-    # def test_get_instruments(self):
-    #     print(self.AccountAPI.get_instruments(instType='SPOT'))
+    def test_get_instruments(self):
+        print(self.AccountAPI.get_instruments(instType='SPOT'))
     # def test_get_account_bills_archive(self):
     #     print(self.AccountAPI.get_account_bills_archive(begin='1715780962300',end='1716998400000'))
     # def test_positions_builder(self):

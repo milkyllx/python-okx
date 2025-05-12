@@ -10,7 +10,7 @@ def publicCallback(message):
 async def main():
     
     # url = "wss://wspap.okex.com:8443/ws/v5/public?brokerId=9999"
-    url = "wss://wspap.okx.com:8443/ws/v5/public?brokerId=9999"
+    url = "wss://ws.okx.com:8443/ws/v5/public"
     ws = WsPublicAsync(url=url)
     await ws.start()
     args = []

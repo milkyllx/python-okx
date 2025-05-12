@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>币投网 - 首页原型</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #12151C;
+            --bg-light: #1A1E29;
+            --accent-color: #00F3FF;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0AEC0;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        h1, h2, h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            margin-top: 0;
+        }
+        /* Header */
+        .header {
+            background-color: var(--bg-light);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+        .nav-buttons .btn {
+            margin-left: 16px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn-outline {
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+        }
+        .btn-outline:hover {
+            background-color: var(--text-primary);
+            color: var(--bg-dark);
+        }
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+            border: 1px solid var(--accent-color);
+        }
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 0;
+            background: linear-gradient(rgba(18, 21, 28, 0.8), rgba(18, 21, 28, 0.8)), url('https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80') no-repeat center center/cover;
+        }
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        .hero .btn {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 48px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .feature-card {
+            background-color: var(--bg-dark);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 243, 255, 0.1);
+        }
+        .feature-card .icon {
+            font-size: 48px;
+            color: var(--accent-color);
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-dark);
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        .footer-col h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+        .social-links a {
+            margin-right: 16px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">币投网</div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">功能</a>
+                <a href="#">解决方案</a>
+                <a href="#">价格</a>
+                <a href="#">学习</a>
+                <a href="#">支持</a>
+            </nav>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">立即注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>最智能的加密货币交易平台</h1>
+                <p>专为追求极致性能的交易者打造。提供自动交易、社交跟单、专业级分析工具，助您在市场中占尽先机。</p>
+                <div>
+                    <a href="#" class="btn btn-primary">立即注册 →</a>
+                    <a href="#" class="btn btn-outline">► 观看介绍视频</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">核心功能</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">🤖</div>
+                        <h3>自动交易</h3>
+                        <p>部署毫秒级响应的交易机器人，24/7监控市场，执行复杂策略，性能远超人类极限。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">👥</div>
+                        <h3>社交交易</h3>
+                        <p>一键跟单顶级交易员，或订阅、购买经过验证的策略模板，轻松复制成功经验。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🛠️</div>
+                        <h3>专业工具</h3>
+                        <p>提供模拟交易、历史数据回测、可视化策略设计器等强大工具，助您验证和优化策略。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Other sections like Solutions, Terminal, Social, Testimonials would follow a similar structure -->
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4 class="logo">币投网</h4>
+                <p style="color: var(--text-secondary); font-size: 14px;">最智能的加密货币交易平台</p>
+            </div>
+            <div class="footer-col">
+                <h4>公司</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">工作机会</a></li>
+                    <li><a href="#">新闻</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>支持</h4>
+                <ul>
+                    <li><a href="#">服务台</a></li>
+                    <li><a href="#">教程</a></li>
+                    <li><a href="#">博客</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" title="Twitter">X</a>
+                    <a href="#" title="Telegram">T</a>
+                    <a href="#" title="Discord">D</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -8,17 +8,18 @@ def privateCallback(message):
 
 
 async def main():
-    url = "wss://wspap.okx.com:8443/ws/v5/private?brokerId=9999"
+    url = "wss://ws.okx.com:8443/ws/v5/private"
     ws = WsPrivateAsync(
-        apiKey="your apiKey",
-        passphrase="your passphrase",
-        secretKey="your secretKey",
+        apiKey="a0e09b8d-defd-4162-86c1-d814f8ec8b53",
+        secretKey="537374F30510C3F957D4A13AB229E2D5",
+        passphrase="milkyllx7353454A!",
+
         url=url,
         useServerTime=False
     )
     await ws.start()
     args = []
-    arg1 = {"channel": "account", "ccy": "BTC"}
+    arg1 = {"channel": "account", "ccy": "USDT"}
     arg2 = {"channel": "orders", "instType": "ANY"}
     arg3 = {"channel": "balance_and_position"}
     args.append(arg1)

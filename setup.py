@@ -4,7 +4,7 @@ with open("README.md", "r",encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="python-okx",
+    name="python-crypto-bot",
     version=okx.__version__,
     author="okxv5api",
     author_email="api@okg.com",

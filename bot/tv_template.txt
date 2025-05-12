@@ -1,0 +1,30 @@
+{
+    "id": "{{strategy.order.id}}",
+    "action": "{{strategy.order.action}}",
+    "marketPosition": "{{strategy.market_position}}",
+    "prevMarketPosition": "{{strategy.prev_market_position}}",
+    "marketPositionSize": "{{strategy.market_position_size}}",
+    "prevMarketPositionSize": "{{strategy.prev_market_position_size}}",
+    "instrument": "{{ticker}}",
+    "signalToken": "MMA-Ribbon-Strategy",
+    "timestamp": "{{timenow}}",
+    "maxLag": "300",
+    "investmentType": "base",
+    "amount": "{{strategy.order.contracts}}",
+	"price": "{{close}}",
+    "exchange": "{{exchange}}",
+    "timeframe": "{{interval}}",
+    "sendToTelegram": "true",
+    "sendToX": "true",
+    "extend": "{{strategy.order.alert_message}}"
+}
+
+extend信息在tradingview中定义了止损止盈信息（待完善）：
+alert_message="Stop Loss: " + str.tostring(stopLossPrice) + ", Take Profit: " + str.tostring(stopLossPrice)
+#
+{
+    "stopLossPrice": 1,
+    "stopLossPrice1":1.1, 
+    "stopLossPrice2":1.2,
+    "stopLossPrice3":1.3,
+}
