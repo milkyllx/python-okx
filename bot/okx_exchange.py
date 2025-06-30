@@ -97,7 +97,7 @@ class OKXExchange(BaseExchange):
                 side = "buy" if action == "buy" else "sell"
                 if side=="buy":
                     #市价买入时，为计价货币的数量，市价卖出时
-                    size = size*current_price
+                    size = float(size) * current_price
 
                 logging.info(f"Preparing MARGIN trade: {instrument}, side: {side}, size: {size}, mode: {td_mode}, price: {current_price}")
                 try:
@@ -106,8 +106,8 @@ class OKXExchange(BaseExchange):
                         tdMode=td_mode,
                         side=side,
                         ordType="market",
-                        sz=size,
-                        reduceOnly=True
+                        sz=size
+                        #reduceOnly=True
                     )
                     logging.info(f"MARGIN trade executed successfully: {response}")
                     if response and response.get('code') == '0':

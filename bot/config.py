@@ -68,15 +68,14 @@ margin_config = [
         "enableSl": False,  # 启用初始止损
         "enableTp": False  # 开启止盈
     },
-    # {
-    #"exchange": "OKX", #OKX,BITGET,BINANCE
-    #     "signalToken": "RSI-STRATEGY-20250530",
-    #     "instrument": "ADA-USDT",
-    #     "size": 10,  #数量来源于信号
-    #     "tdMode": "cross",  # 逐仓isolated,全仓cross
-    #     "enableSl": False,  # 启用初始止损
-    #     "enableTp": False  # 开启止盈
-    # }
+    {
+    "exchange": "OKX", #OKX,BITGET,BINANCE
+        "signalToken": "MARGIN-STRATEGY",
+        "instrument": "ETH-USDT",
+        "tdMode": "isolated",  # 逐仓isolated,全仓cross
+        "enableSl": False,  # 启用初始止损
+        "enableTp": False  # 开启止盈
+    }
 ]
 
 #合约交易配置
